@@ -10,6 +10,7 @@ set( SOURCES
 )
 
 # 编译参数
+SET(CMAKE_CXX_FLAGS "-std=c++2a")
 add_compile_options( -Wall )
 
 # 可执行文件名称

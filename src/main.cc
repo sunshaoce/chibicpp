@@ -9,12 +9,18 @@ int main(int Argc, const char **Argv) {
 
   std::vector<std::string> Args(Argv, Argv + Argc);
 
-  // clang-format off
   std::cout << "  .globl main\n"
             << "main:\n"
-            << "  li a0, " << Args[1] << "\n"
-            << "  ret\n";
-  // clang-format on
+            << "  addi a0, zero, ";
+  for (auto Ch : Args[1]) {
+    if ('0' <= Ch && Ch <= '9')
+      std::cout << Ch;
+    if (Ch == '+')
+      std::cout << "\n  addi a0, a0, ";
+    if (Ch == '-')
+      std::cout << "\n  addi a0, a0, -";
+  }
+  std::cout << "\n  ret" << std::endl;
 
   return 0;
 }

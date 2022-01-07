@@ -6,7 +6,7 @@
 - git 2.25+
 - cmake 3.20+
 - ninja 1.10+
-- clang++ 13+
+- clang++ 13.0+
 - riscv-gnu-toolchain 11.1+
 - qemu-riscv64 6.2+
 
