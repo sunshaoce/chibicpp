@@ -5,16 +5,11 @@ cmake_minimum_required( VERSION 3.20.0 )
 project( chibicpp )
 
 # 添加源代码文件
-set( SOURCES
-  src/main.cc  # 这个项目的驱动文件
-)
+add_subdirectory(src)
 
 # 编译参数
 SET(CMAKE_CXX_FLAGS "-std=c++2a")
 add_compile_options( -Wall )
-
-# 可执行文件名称
-add_executable( ${PROJECT_NAME} ${SOURCES} )
 
 # 头文件
 target_include_directories( ${PROJECT_NAME}
